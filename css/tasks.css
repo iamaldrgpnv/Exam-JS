@@ -1,0 +1,44 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid rgb(11, 167, 0.74);
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+.button-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.button-container .sort-button {
+	padding: 20px;
+	border: 1px solid black;
+	margin-right: 20px;
+	text-align: center;
+	border-radius: 5px;
+}
+.button-container .sort-button:first-child{
+	color: white;
+	background-color: rgba(0, 0, 230, 0.74);
+}
+.button-container .sort-button:last-child{
+	color: white;
+	background-color: rgba(255, 0, 0, 0.74);
+}
+.deleted {
+	background-color: red;
+}
+.delete-button{
+	/* width: 200px; */
+	padding: 20px;
+	text-align: center;
+	color: white;
+	display: flex;
+	justify-content: center;
+	border: 1px;
+	background-color: red;
+	border-radius: 5px;
+}
