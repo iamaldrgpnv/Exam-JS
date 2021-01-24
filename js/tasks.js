@@ -31,66 +31,37 @@ function addDeleted(event) {
 // Удаление
 deleteButton.addEventListener("click", deleteFunc);
 function deleteFunc() {
-	for (let task of mainDiv.children) {
-		if (task.classList.contains("deleted")) {
-			task.remove();
-			let index = task.dataset.key;
-			localStorage.removeItem(index);
-			num++;
-		}
+	let arr = document.querySelectorAll(".deleted");
+	for(let element of arr){
+		element.remove();
+		let index = element.dataset.key;
+		localStorage.removeItem(index);
 	}
 }
 // Сортировка по убыванию
 let decrease = document.getElementById("decrease");
 decrease.addEventListener("click", decFunc);
-function decFunc(){
+function decFunc() {
 	let divs = document.querySelectorAll("#tasks-container div.card");
 	// console.log(divs);
-	let sorted = [...divs].sort(function(a, b){ // Работа с node элементами
+	let sorted = [...divs].sort(function (a, b) { // Работа с node элементами
 		return a.dataset.date < b.dataset.date ? 1 : -1;
 	});
 	mainDiv.innerHTML = ``;
-	for(let div of sorted) mainDiv.appendChild(div); // Внимание, работа с переменной sorted
+	for (let div of sorted) mainDiv.appendChild(div); // Внимание, работа с переменной sorted
 }
-
-
-// function decFunc() {
-// 	arr.sort((a, b) => { return new Date(a.date) > new Date(b.Date) ? 1 : -1 });
-// 	console.log(arr);
-// 	mainDiv.innerHTML = ``;
-// 	for (let div of arr) {
-// 		mainDiv.append(div);
-// 	}
-// }
 // Сортировка по возрастанию
 let increase = document.getElementById("increase");
 increase.addEventListener("click", incFunc);
 function incFunc() {
 	let divs = document.querySelectorAll("#tasks-container div.card");
-	let sorted = [...divs].sort(function(a, b){ // Работа с node элементами
+	let sorted = [...divs].sort(function (a, b) { // Работа с node элементами
 		return a.dataset.date < b.dataset.date ? -1 : 1;
 	});
 	mainDiv.innerHTML = ``;
-	for(let div of sorted) mainDiv.appendChild(div);
+	for (let div of sorted) mainDiv.appendChild(div);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Удаление - доделать
+// // Удаление (черновик)
 // let all_tasks = document.getElementById("tasks-container");
 // console.log(all_tasks.children)
 // all_tasks.addEventListener("click", deleteFunc);
@@ -106,7 +77,6 @@ function incFunc() {
 // 		// document.querySelector(".delete-button").classList.remove("hidden");
 // 	}
 // }
-
 // // Сортировка
 // // for(let i = 0; i < all_tasks.children; i++){
 // // 	for(let j = i; j < all_tasks.children; j++){
